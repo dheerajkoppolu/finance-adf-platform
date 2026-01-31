@@ -41,4 +41,41 @@ Examples:
 - Payment Gateway Status API
 
 Data Characteristics:
-- JSON responses wit
+- JSON responses with nested structures
+- Paginated responses
+- Rate limits (HTTP 429 errors)
+- Occasional downtime or missing data
+
+Real-World Challenges:
+- API throttling and retry logic
+- Handling partial API responses
+- Schema drift in API payloads
+- Ensuring data completeness
+
+---
+
+## 3. Settlement and Reconciliation Files
+
+Source Type:
+- CSV files dropped by external partners
+
+Description:
+- Daily settlement files used for payment reconciliation.
+
+Data Characteristics:
+- Files may arrive late or be missing
+- Schema changes without prior notice
+- Duplicate or missing payment records
+- Incorrect or inconsistent file naming
+
+Real-World Challenges:
+- File arrival detection and validation
+- Handling late and reprocessed files
+- Schema validation before ingestion
+- Reconciliation against transaction data
+
+---
+
+## Why These Sources Are Realistic
+
+These data sources reflect real finance and payments systems where data reliability, traceability, reconciliation, and error handling are critical. Designing pipelines around these challenges ensures the platform behaves like a real production system rather than a demo.
