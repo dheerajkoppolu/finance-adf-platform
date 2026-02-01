@@ -166,3 +166,17 @@ Bad JSON escape sequence (\d)
 - Reading error messages carefully saves hours
 - Always validate each layer independently (SQL → SHIR → ADF)
 - Documentation is as important as implementation
+
+### Issue: ADF SQL Linked Service fails with Login failed (Error 4060)
+
+**Root Cause**
+Login existed at SQL Server level but database user lacked permissions.
+
+**Resolution**
+1. Create database user for login
+2. Grant db_datareader / required roles
+3. Validate SQL login via SSMS before testing in ADF
+
+**Key Learning**
+Authentication ≠ Authorization in SQL Server.
+
